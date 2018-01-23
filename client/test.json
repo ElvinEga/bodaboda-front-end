@@ -1,0 +1,95 @@
+POST/registerCustomer
+{"username":"0712345678","password":"12345","userId":"55f1ad00bfd4141418000001","deviceId":"0712345678","fullname":"Shaddy Ega","phone":"0712345678"}
+
+{
+    "success": true,
+    "message": "REGISTER.SUCCESS",
+    "data": {
+        "_id": "596f405236f9491100362563",
+        "deviceId": "0702345678",
+        "salt": "9j90COvnQa6YklM8yzFp3UvWu12JP9HlfC+d+hvw8Z5jxkCaQY5nRiYSEUz/M4O4RKPA13Q2HJBOVxD7L4lM1m42MiTatzUc+vj+FHiTnoT3n6qZdyclDUw2ETNDUI9dMtjs+tJBrpTOiodsucPs/RNWoNVLhdvMeCJOLsGvsmk=",
+        "hash": "sXr51XtQ7DfBJCjBdvhaY1dCgO1VNGSF4uJT/BV81XPeZfh8P+nojJRfmqMya3Bx7iNT7GvqHoM6urFUR7MHZE5vBbhWKhY7qvg1S14DyDTHK04v4Ty1WxIrAXDZ37G05QOdFdFkDcmdN9bzFoYgyMa3IU3W7q2vF6bs2MJ37/Y=",
+        "__v": 0,
+        "role": "user",
+        "username": "0702345678",
+        "id": "596f405236f9491100362563"
+    }
+}
+
+response ERROR
+{
+  "success": false,
+  "message": "REGISTER.ERR.DEVICE",
+  "data": {}
+}
+
+
+/register
+POST 200
+{"deviceId":"0712345678","username":"0712345678","password":"12345"}
+response
+{
+  "success": true,
+  "message": "REGISTER.SUCCESS",
+  "data": {
+    "__v": 0,
+    "deviceId": "0712345678",
+    "salt": "G3y7imvRC5bGEOMwIrKiSRnZB/IzyW5pvcWUlti9Yjxab4cIiMxrDMS6BevHqvPIub8pSfBWNjchCH1i3bD8IzUuVrtN2u+wD5VoZMiwlyGaurHcklKipLM0umTMPPr3CSbCF9npDJj2pG51O65vEDh/zTSVV6TIXwCZiThoe4g=",
+    "hash": "PFyrN23NYW0F5cm2lEZSrSLgPRNdu1VDEgJ91r8gUEfcg98QZpLcRPp/80QWt/lYYpyJMUrbLUzGuZUIeN7jpXGV8eKhoa+UPt+Wo/Lv2hHGx946Pn4290Zn/qqMVzDGlftr7H8W3JajAz9se6Y9wVQwlSJh3YHOdDCnHpsfSnM=",
+    "_id": "596df9f607fe084431000001",
+    "role": "user",
+    "username": "0712345678",
+    "id": "596df9f607fe084431000001"
+  }
+}
+
+
+/login
+POST
+{"username":"0712345678","password":"12345"}
+RESPONSE 200
+{
+  "user": {
+    "id": "596df9f607fe084431000001",
+    "name": "0712345678",
+    "role": {
+      "bitMask": 2,
+      "title": "user"
+    },
+    "expired": "2017-07-18T18:11:26.376Z",
+    "ip": "::ffff:127.0.0.1"
+  },
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU5NmRmOWY2MDdmZTA4NDQzMTAwMDAwMSIsIm5hbWUiOiIwNzEyMzQ1Njc4Iiwicm9sZSI6eyJiaXRNYXNrIjoyLCJ0aXRsZSI6InVzZXIifSwiZXhwaXJlZCI6IjIwMTctMDctMThUMTg6MTE6MjYuMzc2WiIsImlwIjoiOjpmZmZmOjEyNy4wLjAuMSJ9.mBQXUdVyZJUi8uViYEUgC3dLnqOqQOQUgkmUsxPEZik"
+}
+RESPONSE ERROR 500
+LOGIN.ERROR.USERNAME
+
+//taxi list
+/api/TaxiCompany?limit=1000&start=0
+GET
+{
+  "data": [
+    {
+      "_id": "5343c72a365cfcaf0930c418",
+      "companyName": "Mai Linh",
+      "logo": "/images/mailinh.png",
+      "address": "T%F2a+nh%E0+VNT+-+Nguy%3Fn+Tr%E3i",
+      "hotline": "19000099",
+      "fax": "016266162",
+      "description": "Mai+Linh+h%E3y+n%F3i+theo+c%E1ch+c%3Fa+b%3Fn",
+      "firstKm": 0.7,
+      "middleKm": 30,
+      "firstPrice": 11000,
+      "middlePrice": 15800,
+      "lastPrice": 12500,
+      "__v": 0,
+      "id": "5343c72a365cfcaf0930c418"
+    }
+  ],
+  "success": true,
+  "total": 1,
+  "message": null,
+  "groupSummaryData": [
+    {}
+  ]
+}

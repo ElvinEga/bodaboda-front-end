@@ -1,0 +1,106 @@
+<div id="drivingApp">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal" role="form" name="addDriving">
+                <div class="form-group">
+                    <label for="tendangnhap" class="col-sm-3 control-label">Username</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="tendangnhap" ng-model="driving.username"
+                               placeholder="Enter Username" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-3 control-label">Phone Number</label>
+
+                    <div class="col-sm-9">
+                        <input type="tel" class="form-control" id="phone" ng-model="driving.phone"
+                               placeholder="Enter Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fullname" class="col-sm-3 control-label">Fullname</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fullname" ng-model="driving.fullname"
+                               placeholder="Enter Fullname" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthday" class="col-sm-3 control-label">Date of Birth</label>
+
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" id="birthday" ng-model="driving.birthday"
+                               placeholder="Birthday" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-3 control-label">Location</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="location" ng-model="driving.location"
+                               placeholder="Enter Location" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="des" class="col-sm-3 control-label">Bio</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="des" ng-model="driving.bio"
+                               placeholder="Enter Bio" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Bodaboda Type</label>
+
+                    <div class="col-sm-9">
+                        <select ng-change="findSeatNum(driving.type)" ng-model="driving.type"
+                                ng-options="type._id as type.carMarker for type in listDriverTypes">
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group" ng-show="checkSeatShow">
+                    <p style="text-indent: 150px;"> Passanger seats</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="col-sm-3 control-label">Password</label>
+
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="exampleInputPassword1"
+                               ng-model="driving.password" placeholder="Enter Password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Profile Image</label>
+
+                    <div class="col-sm-9">
+                        <input class="form-control" type="file" id="exampleInputFile"
+                               ng-file-select="onFileSelect($files, driving)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input checked="checked" type="checkbox"> Agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button ng-click="createDriving(driving)" class="btn btn-success"> Add New</button>
+                        <button class="btn btn-primary" ng-click="driving = {}"> Back</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>
